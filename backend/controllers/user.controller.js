@@ -7,6 +7,7 @@ const userService = require("../services/user.service");
 // We use validation result for the validations added on the route.
 const { validationResult } = require("express-validator");
 
+// This controller function is to register a user
 module.exports.registerUser = async (req, res, next) => {
   const errors = validationResult(req);
 
@@ -42,4 +43,38 @@ module.exports.registerUser = async (req, res, next) => {
 
   // Now we finally return the user and the token that is generated
   res.status(201).json({ token, user });
+};
+
+module.exports.loginUser = async (req, res, next) => {
+  // Extracting the errors from the validation result
+  const errors = validationResult(req);
+  // Check if there are any errors or not {since no errors to this loop will not run}
+
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+  // Extracting the email and the password from the request
+  const { email, password } = req.body;
+
+  // check the database and get the user if exists
+  const user = await userModel.findOne({ email }).select("+password");
+
+  // check if the user exists (if not exist then null is reaturned which is a falsy value and ! is also a faulsy value so by logic the if block will run)
+  if (!user) {
+    return res.status(401).json({ message: "Invalid email or password" });
+  }
+
+  // Now checking if the password is same as the password saved in db
+
+  const isMatch = await user.comparePassword(password);
+
+  if (!isMatch) {
+    return res.status(401).json({ message: "Invalid email or password" });
+  }
+
+  const token = user.generateAuthToken();
+
+  res.cookie("token", token);
+
+  res.status(200).json({ token, user });
 };
