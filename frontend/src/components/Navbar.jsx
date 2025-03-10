@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="bg-[#0066ee] w-full h-15 flex justify-between items-center m-0 pt-4 pb-4 ">
-      <div className="text-white font-sans text-2xl font-semibold p-4">
+      <div className="text-white font-sans text-2xl font-semibold p-4 ">
         myfitness
       </div>
       {/* Icon for login */}
