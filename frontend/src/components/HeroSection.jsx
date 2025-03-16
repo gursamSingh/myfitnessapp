@@ -5,22 +5,22 @@ import ContentSection from "./ContentSection";
 const HeroSection = () => {
   return (
     <div>
-      <div className="w-full min-h-screen pt-[30px] bg-custom-gradient">
-        <div className="flex flex-col items-center ">
-          <div className="flex flex-col items-center justify-center w-[80%]">
-            <div className=" text-center text-base text-[#d8d8dc] font-normal mb-2">
+      <div className="w-full pt-[30px] bg-custom-gradient lg:flex lg:justify-center lg:h-auto lg:p-0">
+        <div className="flex flex-col items-center lg: justify-center lg:items-start lg:p-8">
+          <div className="flex flex-col items-center justify-center w-[80%] lg:w-[700px] lg:items-start lg:text-left">
+            <div className=" text-center text-base text-[#d8d8dc] font-normal mb-2 lg:font-[600] lg:mb-[8px] lg:text-left">
               #1 nutrition tracking app
             </div>
-            <div className="m-2 text-center text-5xl font-light text-[#ffffff]">
+            <div className="m-2 text-center text-5xl font-light text-[#ffffff] lg:text-[68px] lg:m-0 lg:font-medium leading-14">
               <span className="">Nutrition tracking</span>
-              <div className="flex items-center justify-center gap-5 mt-4">
+              <div className="flex items-center justify-center gap-2 mt-4 lg:justify-start">
                 <span>for</span>
                 <div className="bg-white text-[#0066ee] w-[50%] -skew-y-1">
                   <span>real life</span>
                 </div>
               </div>
             </div>
-            <div className="mt-6 mb-6 text-center w-full text-base text-[#ffffff]">
+            <div className="mt-6 mb-6 text-center w-full text-base text-[#ffffff] md:w-[40%] lg:w-full lg:text-left">
               <p>
                 Make progress with the all-in-one food, exercise, and calorie
                 tracker.
@@ -51,7 +51,7 @@ const HeroSection = () => {
           <img
             src={heroPhone}
             alt=""
-            className="w-60 md:w-80 drop-shadow-3xl"
+            className="w-60 md:w-60 drop-shadow-3xl mb-8 lg:[w-100%] lg:[h-100%]"
           />
         </div>
       </div>

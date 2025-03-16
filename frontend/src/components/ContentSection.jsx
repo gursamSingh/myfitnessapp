@@ -1,7 +1,7 @@
 import React from "react";
-import trackFoodImg from "../assets/track-food-small.jpg";
-import learnWhatWorksImg from "../assets/learn-what-works-small.jpg";
-import changeYourHabitImg from "../assets/change-your-habits-small.jpg.webp";
+import trackFoodImg from "../assets/track-food-large.jpg";
+import learnWhatWorksImg from "../assets/learn-what-works-large.jpg";
+import changeYourHabitImg from "../assets/change-your-habits-large.jpg";
 
 const ContentSection = () => {
   return (
@@ -18,54 +18,74 @@ const ContentSection = () => {
           </svg>
         </div>
 
-        <h2 className="font-medium text-4xl w-78 text-center leading-12">
+        <h2 className="font-medium text-4xl text-center leading-12 lg:text-[48px]">
           Hit your health goals in 1-2-3
         </h2>
       </div>
 
-      <div>
-        <div className="flex flex-col items-center w-[80%] justify-center mt-16 ml-auto mr-auto">
-          <div className="flex flex-col items-center gap-1 text-center">
-            <p className="text-6xl font-medium text-blue-700">1</p>
-            <h1 className="text-3xl leading-9 w-55 text-center font-[500]">
+      <div className="relative w-full min-h-screen">
+        <div className="flex flex-col items-center w-[80%] justify-center mt-16 ml-auto mr-auto lg:flex-row-reverse">
+          <div className="flex flex-col items-center gap-2 lg:items-start lg:ml-[75px] mb-[45px]">
+            <p className="text-5xl font-medium text-blue-700 lg:text-[68px]">
+              1
+            </p>
+            <h1 className="text-3xl leading-9 w-55 text-center font-[500] lg:text-left lg:text-[36px] lg:leading-12 lg:w-[16rem]">
               Track food, fitness & fasting
             </h1>
-            <p className="text-zinc-600 mb-6 ml-4 mr-4 mt-4 text-base text-center leading-6">
+            <p className="text-zinc-600 mb-6 ml-4 mr-4 mt-4 text-base text-center leading-6 lg:text-left lg:m-0 lg:text-[16px] lg:mt-4 lg:leading-7 lg:w-80">
               Tracking calories and macros is easy with myfitness app.
             </p>
           </div>
-          <div className="w-[80%] flex justify-center align-middle items-center">
-            <img src={trackFoodImg} alt="calorie-tracker-image" />
+          <div className="flex justify-center align-middle items-center">
+            <img
+              src={trackFoodImg}
+              className="lg:w-[486px] lg:h-[576px] lg:object-contain"
+              alt="calorie-tracker-image"
+            />
           </div>
         </div>
-        <div className="flex flex-col items-center w-[80%] justify-center mt-16 ml-auto mr-auto">
-          <div className="flex flex-col items-center gap-1 text-center">
-            <p className="text-6xl font-medium text-blue-700">2</p>
-            <h1 className="text-3xl leading-9 w-60 text-center font-[500]">
+
+        <div className="flex flex-col items-center w-[80%] justify-center mt-16 ml-auto mr-auto lg:flex-row lg:absolute lg:top-[32rem] lg:left-[13rem]">
+          <div className="flex flex-col items-center gap-2 lg:items-end lg:mr-[75px] mb-[45px]">
+            <p className="text-5xl font-medium text-blue-700 lg:text-[68px]">
+              2
+            </p>
+            <h1 className="text-3xl leading-9 w-60 text-center font-[500] lg:text-right lg:text-[36px] lg:leading-12 lg:w-[18rem]">
               Learn what works
             </h1>
-            <p className="text-zinc-600 mb-6 ml-4 mr-4 mt-4 text-base text-center w-[358px] leading-6">
+            <p className="text-zinc-600 mb-6 ml-4 mr-4 mt-4 text-base text-center leading-6 lg:text-right lg:m-0 lg:text-[16px] lg:mt-4 lg:leading-7 lg:w-80">
               Personalized nutrition insights reveal what's working so you can
               make smarter choices.
             </p>
           </div>
-          <div className="w-[80%] flex justify-center align-middle items-center">
-            <img src={learnWhatWorksImg} alt="calorie-tracker-image" />
+          <div className="flex justify-center align-middle items-center ">
+            <img
+              src={learnWhatWorksImg}
+              className="lg:w-[486px] lg:h-[576px] lg:object-contain"
+              alt="calorie-tracker-image"
+            />
           </div>
         </div>
-        <div className="flex flex-col items-center w-[80%] justify-center mt-16 ml-auto mr-auto">
-          <div className="flex flex-col items-center gap-1 text-center">
-            <p className="text-6xl font-medium text-blue-700">3</p>
-            <h1 className="text-3xl leading-9 w-[290px] text-center font-[500]">
+
+        <div className="flex flex-col items-center w-[80%] justify-center mt-16 ml-auto mr-auto lg:flex-row-reverse lg:absolute lg:top-[64rem] lg:left-[13rem]">
+          <div className="flex flex-col items-center gap-2 lg:items-start lg:ml-[75px] mb-[45px]">
+            <p className="text-5xl font-medium text-blue-700 lg:text-[68px]">
+              3
+            </p>
+            <h1 className="text-3xl leading-9 w-[290px] text-center font-[500] lg:text-left lg:text-[36px] lg:leading-12 lg:w-[22rem]">
               Change your habits and reach your goals
             </h1>
-            <p className="text-zinc-600 mb-6 ml-4 mr-4 mt-4 text-base text-center w-[358px] leading-6">
+            <p className="text-zinc-600 mb-6 ml-4 mr-4 mt-4 text-base text-center w-[300px] leading-6 lg:text-left lg:m-0 lg:text-[16px] lg:mt-4 lg:leading-7">
               Now you have the tools and knowledge to build healthy habits for
               life.
             </p>
           </div>
-          <div className="w-[80%] flex justify-center align-middle items-center">
-            <img src={changeYourHabitImg} alt="calorie-tracker-image" />
+          <div className=" flex justify-center align-middle items-center ">
+            <img
+              src={changeYourHabitImg}
+              className="lg:w-[486px] lg:h-[576px] lg:object-contain"
+              alt="calorie-tracker-image"
+            />
           </div>
         </div>
       </div>
