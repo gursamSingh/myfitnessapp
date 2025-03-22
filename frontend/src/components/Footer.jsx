@@ -40,7 +40,7 @@ const Footer = () => {
               <p class="mt-2 text-gray-500 ">
                 Our friendly team is here to help.
               </p>
-              <p class="mt-2 text-blue-500 ">hello@merakiui.com</p>
+              <p class="mt-2 text-blue-500 ">gursam.madan@gmail.com</p>
             </div>
 
             <div>
@@ -71,7 +71,7 @@ const Footer = () => {
                 Come say hello at our office HQ.
               </p>
               <p class="mt-2 text-blue-500 ">
-                100 Smith Street Collingwood VIC 3066 AU
+                New Colony, Gurgaon, Haryana, 122001
               </p>
             </div>
 
@@ -95,7 +95,7 @@ const Footer = () => {
 
               <h2 class="mt-4 text-lg font-medium text-gray-800 ">Phone</h2>
               <p class="mt-2 text-gray-500 ">Mon-Fri from 8am to 5pm.</p>
-              <p class="mt-2 text-blue-500">+1 (555) 000-0000</p>
+              <p class="mt-2 text-blue-500">+91 - 9717-163-369</p>
             </div>
           </div>
         </div>

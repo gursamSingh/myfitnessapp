@@ -3,18 +3,18 @@ import quizPhoneImg from "../assets/daily-plan.jpg";
 
 const QuizSection = () => {
   return (
-    <div className="w-screen bg-[#0066ee] bg-custom-gradient flex flex-col items-center">
-      <div className="flex flex-col items-center justify-center w-[231px] mt-14">
-        <div>
-          <h3 className="text-base font-semibold text-[#ebebf0] leading-6">
-            Have 2 mins?
-          </h3>
-        </div>
-        <div className="text-center mt-3 text-[#FFFFFF]">
-          <h2 className="text-4xl font-extralight leading-12 ">Get your</h2>
-          <span className="text-4xl font-semibold leading-12">
-            personalized daily plan
-          </span>
+      <div className="w-screen bg-[#0066ee] bg-custom-gradient flex flex-col items-center  lg:flex-row lg: justify-evenly">
+      <div className="flex flex-col items-center justify-center w-[231px] mt-14 ">
+        <h3 className="text-base font-semibold text-[#ebebf0] leading-6 ">
+          Have 2 mins?
+        </h3>
+        <div className="text-center mt-3 text-[#FFFFFF] lg:w-xl lg:text-left">
+          <h2 className="text-4xl font-extralight leading-12 lg:text-6xl lg:leading-22">
+            Get your
+            <span className="text-4xl font-semibold leading-12 lg:text-6xl ml-3">
+              personalized daily plan
+            </span>
+          </h2>
         </div>
         <div>
           <button className="bg-white h-12 w-60 rounded-3xl text-[#0066ee] flex justify-center items-center gap-2 font-bold hover:drop-shadow-3xl hover:bg-[#EBEBF0] cursor-pointer mt-6">

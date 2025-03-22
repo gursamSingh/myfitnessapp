@@ -15,7 +15,7 @@ const HeroSection = () => {
             <span className="">Nutrition tracking</span>
             <div className="flex items-center justify-center gap-2 mt-4 lg:justify-start">
               <span>for</span>
-              <div className="bg-white text-[#0066ee] w-[50%] -skew-y-1 p-2 ml-1 text-left lg:w-[45%]">
+              <div className="bg-white text-[#0066ee] w-[52%] -skew-y-1 p-2 ml-1 text-left lg:w-[45%]">
                 <span>real life</span>
               </div>
             </div>
