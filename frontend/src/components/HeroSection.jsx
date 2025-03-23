@@ -3,6 +3,7 @@ import heroPhone from "../assets/hero-phone.jpg";
 import ContentSection from "./ContentSection";
 import QuizSection from "./QuizSection";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 const HeroSection = () => {
   return (
     <div className="w-auto pt-[30px] bg-custom-gradient lg:flex lg:justify-center lg:h-auto lg:p-0">
@@ -15,7 +16,7 @@ const HeroSection = () => {
             <span className="">Nutrition tracking</span>
             <div className="flex items-center justify-center gap-2 mt-4 lg:justify-start">
               <span>for</span>
-              <div className="bg-white text-[#0066ee] w-[52%] -skew-y-1 p-2 ml-1 text-left lg:w-[45%]">
+              <div className="bg-white text-[#0066ee] w-[55%] -skew-y-1 p-2 ml-1 text-left lg:w-[45%]">
                 <span>real life</span>
               </div>
             </div>
@@ -28,23 +29,25 @@ const HeroSection = () => {
           </div>
         </div>
         <div>
-          <button className="bg-white h-12 w-60 rounded-3xl text-[#0066ee] flex justify-center items-center gap-2 font-bold hover:drop-shadow-3xl hover:bg-[#EBEBF0] cursor-pointer ">
-            START TODAY
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={4}
-              stroke="currentColor"
-              className="size-4"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m8.25 4.5 7.5 7.5-7.5 7.5"
-              />
-            </svg>
-          </button>
+          <Link to="/signup">
+            <button className="bg-white h-12 w-60 rounded-3xl text-[#0066ee] flex justify-center items-center gap-2 font-bold hover:drop-shadow-3xl hover:bg-[#EBEBF0] cursor-pointer ">
+              START TODAY
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={4}
+                stroke="currentColor"
+                className="size-4"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </Link>
         </div>
       </div>
       <div className="w-auto flex flex-col justify-center items-center mt-10">
