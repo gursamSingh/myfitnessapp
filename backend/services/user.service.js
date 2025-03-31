@@ -9,9 +9,31 @@ module.exports.createUser = async ({
   lastname,
   email,
   password,
+  goal,
+  barriers,
+  activityLevel,
+  gender,
+  dateOfBirth,
+  height,
+  weight,
+  goalWeight,
+  weeklyGoal,
 }) => {
   // Check if the input that the function got is correct
-  if (!firstname || !email || !password) {
+  if (
+    !firstname ||
+    !email ||
+    !password ||
+    !goal ||
+    !barriers ||
+    !activityLevel ||
+    !gender ||
+    !dateOfBirth ||
+    !height ||
+    !weight ||
+    !goalWeight ||
+    !weeklyGoal
+  ) {
     throw new Error("All the fields are required");
   }
 
@@ -24,6 +46,17 @@ module.exports.createUser = async ({
     },
     email,
     password,
+    userDetails: {
+      goal,
+      barriers,
+      activityLevel,
+      gender,
+      dateOfBirth,
+      height,
+      weight,
+      goalWeight,
+      weeklyGoal,
+    },
   });
 
   //   Now the user created is returned

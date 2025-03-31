@@ -30,6 +30,46 @@ const userSchema = new mongoose.Schema({
     required: true,
     select: false, //select option set to false for the password field. This ensures that the password field is excluded from query results.
   },
+
+  userDetails: {
+    goal: {
+      type: String,
+      required: true,
+    },
+    barriers: {
+      type: String,
+      required: true,
+    },
+    activityLevel: {
+      type: String,
+      required: true,
+    },
+    gender: {
+      type: String,
+      required: true,
+    },
+    dateOfBirth: {
+      type: Date,
+      required: true,
+      trim: true,
+    },
+    height: {
+      type: Number,
+      required: true,
+    },
+    weight: {
+      type: Number,
+      required: true,
+    },
+    goalWeight: {
+      type: Number,
+      required: true,
+    },
+    weeklyGoal: {
+      type: Number,
+      required: true,
+    },
+  },
 });
 
 // Generates a JWT token for user authentication.

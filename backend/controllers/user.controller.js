@@ -8,7 +8,7 @@ const userService = require("../services/user.service");
 const { validationResult } = require("express-validator");
 
 // This controller function is to register a user
-module.exports.registerUser = async (req, res, next) => {
+module.exports.signupUser = async (req, res, next) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
@@ -18,7 +18,7 @@ module.exports.registerUser = async (req, res, next) => {
   console.log(req.body);
 
   // We have extracted the below from the request
-  const { fullname, email, password } = req.body;
+  const { fullname, email, password, userDetails } = req.body;
 
   // Before creating a user I will need to check also that the using the email a user is not already created
   const isUserAlready = await userModel.findOne({ email });
@@ -36,6 +36,15 @@ module.exports.registerUser = async (req, res, next) => {
     lastname: fullname.lastname,
     email,
     password: hashedPassword,
+    goal: userDetails.goal,
+    barriers: userDetails.barriers,
+    activityLevel: userDetails.activityLevel,
+    gender: userDetails.gender,
+    dateOfBirth: userDetails.dateOfBirth,
+    height: userDetails.height,
+    weight: userDetails.weight,
+    goalWeight: userDetails.goalWeight,
+    weeklyGoal: userDetails.weeklyGoal,
   });
 
   // We need the jwt token also since this will be used for the next requests as well
