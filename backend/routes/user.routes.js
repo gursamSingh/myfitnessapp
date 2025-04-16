@@ -39,9 +39,6 @@ router.post(
     body("userDetails.goalWeight")
       .notEmpty()
       .withMessage("Goal weight must not be empty"),
-    body("userDetails.weeklyGoal")
-      .notEmpty()
-      .withMessage("Weekly goal must not be empty"),
   ],
   userController.signupUser
 );

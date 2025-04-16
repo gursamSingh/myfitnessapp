@@ -17,7 +17,6 @@ module.exports.createUser = async ({
   height,
   weight,
   goalWeight,
-  weeklyGoal,
 }) => {
   // Check if the input that the function got is correct
   if (
@@ -31,8 +30,7 @@ module.exports.createUser = async ({
     !dateOfBirth ||
     !height ||
     !weight ||
-    !goalWeight ||
-    !weeklyGoal
+    !goalWeight
   ) {
     throw new Error("All the fields are required");
   }
@@ -55,7 +53,6 @@ module.exports.createUser = async ({
       height,
       weight,
       goalWeight,
-      weeklyGoal,
     },
   });
 

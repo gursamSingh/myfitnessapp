@@ -65,10 +65,6 @@ const userSchema = new mongoose.Schema({
       type: Number,
       required: true,
     },
-    weeklyGoal: {
-      type: Number,
-      required: true,
-    },
   },
 });
 
