@@ -1,13 +1,36 @@
 import React, { useState } from "react";
 import Navbar from "../components/navbar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const submitHandler = (e) => {
+  const navigate = useNavigate();
+
+  const submitHandler = async (e) => {
+    console.log("submite handler started");
     e.preventDefault();
+    const userData = {
+      email: email,
+      password: password,
+    };
+
+    // Implement the login logic to send a request & store the token in the local storage
+    const response = await axios.post(
+      `${import.meta.env.VITE_BASE_URL}/users/login`,
+      userData
+    );
+
+    console.log(response.status);
+    if (response.status === 200) {
+      const data = response.data;
+      localStorage.setItem("token", data.token);
+      navigate("/home");
+    }
+
     console.log(email, password);
     setEmail("");
     setPassword("");
@@ -23,10 +46,7 @@ const Login = () => {
               Member Login
             </h2>
 
-            <form
-              className="p-4 flex flex-col gap-2"
-              onSubmit={(e) => submitHandler(e)}
-            >
+            <form className="p-4 flex flex-col gap-2" onSubmit={submitHandler}>
               <label className="text-lg mt-2">Email Address</label>
               <input
                 value={email}
@@ -53,7 +73,7 @@ const Login = () => {
 
           <div className="flex items-center justify-center py-4 text-center bg-gray-200 rounded-b-lg text-sm">
             <p>Not a member yet?</p>
-            <Link to="/#" className="ml-1 text-blue-600">
+            <Link to="/register" className="ml-1 text-blue-600">
               Sign Up Now
             </Link>
           </div>

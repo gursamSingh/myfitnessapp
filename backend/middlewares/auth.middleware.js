@@ -1,7 +1,7 @@
 // Here I will create the auth middleware which will verify the token generated while creating the user is valid or not
 
 const userModel = require("../models/user.model");
-const bcrypt = require("brcypt");
+const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 module.exports.authUser = async (req, res, next) => {

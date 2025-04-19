@@ -77,6 +77,8 @@ const MultiStepForm = () => {
       localStorage.setItem("token", data.token);
       navigate("/home");
     }
+
+    setData("");
   };
   return (
     <div>

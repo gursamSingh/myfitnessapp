@@ -5,6 +5,7 @@ const router = express.Router();
 const { body } = require("express-validator");
 const userController = require("../controllers/user.controller");
 const { route } = require("../app");
+const authMiddleware = require("../middlewares/auth.middleware");
 
 // THis route is for registering the user
 router.post(
@@ -55,5 +56,12 @@ router.post(
   ],
   userController.loginUser
 );
+
+// API to get the user profile
+
+// Here we check if user is authenticated using the middleware and if yes then get the data form the user controller.getUserProfile
+router.get("/profile", authMiddleware.authUser, userController.getUserProfile);
+
+router.get("/logout", authMiddleware.authUser, userController.logoutUser);
 
 module.exports = router;
