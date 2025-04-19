@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import { Route, Routes } from "react-router-dom";
 import Signup from "./pages/Signup";
 import Register from "./pages/Register";
+import Logout from "./components/Logout";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/register" element={<Register />} />
       <Route path="/home" element={<Home />} />
+      <Route path="/logout" element={<Logout />} />
     </Routes>
   );
 }
