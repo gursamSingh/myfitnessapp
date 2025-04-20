@@ -4,6 +4,7 @@ import Form2 from "./MutilStepForm/Form2.jsx";
 import Form3 from "./MutilStepForm/Form3.jsx";
 import axios from "axios";
 import { Navigate, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { useState } from "react";
 
@@ -114,7 +115,13 @@ const MultiStepForm = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-center py-4 text-center bg-gray-200 rounded-b-lg text-sm"></div>
+          <div className="flex items-center justify-center py-4 text-center bg-gray-200 rounded-b-lg text-sm">
+            {" "}
+            <p>Already a member?</p>
+            <Link to="/login" className="ml-1 text-blue-600">
+              Login
+            </Link>
+          </div>
         </div>
       </div>
     </div>

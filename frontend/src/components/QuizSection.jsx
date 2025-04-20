@@ -20,7 +20,7 @@ const QuizSection = () => {
         <div>
           <Link to="/signup">
             <button className="bg-white h-12 w-60 rounded-3xl text-[#0066ee] flex justify-center items-center gap-2 font-bold hover:drop-shadow-3xl hover:bg-[#EBEBF0] cursor-pointer mt-6">
-              TAKE THE QUIZ
+              SIGN UP
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

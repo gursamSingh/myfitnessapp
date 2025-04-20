@@ -1,13 +1,11 @@
 import React from "react";
 import Logout from "../components/Logout";
+import HomeHeader from "../components/HomeHeader";
 
 const Home = () => {
   return (
-    <div>
-      Home
-      <div>
-        <Logout></Logout>
-      </div>
+    <div className="w-full h-full">
+      <HomeHeader></HomeHeader>
     </div>
   );
 };
