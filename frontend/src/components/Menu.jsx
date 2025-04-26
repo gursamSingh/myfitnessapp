@@ -1,8 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { UserDataContext } from "../context/UserContext";
+import { useContext } from "react";
 
 const Menu = () => {
+  const { user } = useContext(UserDataContext);
+
   const navigate = useNavigate();
 
   const logoutHandler = async () => {
@@ -42,9 +46,11 @@ const Menu = () => {
             src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
             alt="avatar"
           />
-          <h4 className="mx-2 mt-2 font-medium text-gray-800">Hi John Doe</h4>
+          <h4 className="mx-2 mt-2 font-medium text-gray-800">
+            Hi {user?.fullname?.firstname ? user.fullname.firstname : "Guest"}
+          </h4>
           <p className="mx-2 mt-1 text-sm font-medium text-gray-600">
-            john@example.com
+            {user?.email ? user.email : "user@gmail.com"}
           </p>
         </div>
 

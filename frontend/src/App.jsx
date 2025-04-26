@@ -9,17 +9,20 @@ import { Route, Routes } from "react-router-dom";
 import Signup from "./pages/Signup";
 import Register from "./pages/Register";
 import Logout from "./components/Logout";
+import UserContext from "./context/UserContext";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Welcome />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/logout" element={<Logout />} />
-    </Routes>
+    <UserContext>
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/logout" element={<Logout />} />
+      </Routes>
+    </UserContext>
   );
 }
 

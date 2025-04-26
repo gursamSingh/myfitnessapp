@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import Menu from "./Menu";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useContext } from "react";
+import { UserDataContext } from "../context/UserContext";
 
 const HomeHeader = () => {
+  const user = useContext(UserDataContext);
   const [menuOpen, setMenuOpen] = useState(false);
   const [menuIcon, setMenuIcon] = useState(true);
   const menuRef = useRef(null);

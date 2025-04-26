@@ -3,8 +3,11 @@ import Navbar from "../components/navbar";
 import { Link, useNavigate } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
+import { useContext } from "react";
+import { UserDataContext } from "../context/UserContext";
 
 const Login = () => {
+  const { user, setUser } = useContext(UserDataContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -27,11 +30,12 @@ const Login = () => {
     console.log(response.status);
     if (response.status === 200) {
       const data = response.data;
+      // Setting the user in the context
+      setUser(data.user);
       localStorage.setItem("token", data.token);
       navigate("/home");
     }
 
-    console.log(email, password);
     setEmail("");
     setPassword("");
   };

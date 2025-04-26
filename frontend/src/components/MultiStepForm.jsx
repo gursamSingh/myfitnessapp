@@ -2,13 +2,16 @@ import React from "react";
 import Form1 from "./MutilStepForm/Form1.jsx";
 import Form2 from "./MutilStepForm/Form2.jsx";
 import Form3 from "./MutilStepForm/Form3.jsx";
+import { useContext } from "react";
 import axios from "axios";
 import { Navigate, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { UserDataContext } from "../context/UserContext.jsx";
 
 import { useState } from "react";
 
 const MultiStepForm = () => {
+  const { user, setUser } = useContext(UserDataContext);
   const [currentStep, setCurrentStep] = useState(0);
 
   // Storing the data to send to the components
@@ -75,6 +78,8 @@ const MultiStepForm = () => {
 
     if (response.status === 201) {
       const data = response.data;
+      console.log(data.user);
+      setUser(data.user);
       localStorage.setItem("token", data.token);
       navigate("/home");
     }
