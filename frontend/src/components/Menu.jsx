@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { UserDataContext } from "../context/UserContext";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 const Menu = () => {
   const { user } = useContext(UserDataContext);
@@ -56,9 +57,9 @@ const Menu = () => {
 
         <div className="flex flex-col justify-between flex-1 mt-6">
           <nav>
-            <a
-              className="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg"
-              href="#"
+            <Link
+              className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg hover:bg-gray-100 hover:text-gray-700"
+              to={"/home"}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +76,7 @@ const Menu = () => {
                 />
               </svg>
               <span className="mx-4 font-medium">My Home</span>
-            </a>
+            </Link>
 
             <a
               className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg hover:bg-gray-100 hover:text-gray-700"

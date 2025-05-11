@@ -32,7 +32,7 @@ const UserContext = ({ children }) => {
             headers: { Authorization: `Bearer ${token}` },
           }
         );
-        console.log("User Profile:", response.data);
+
         setUser(response.data); // store in context
       } catch (err) {
         console.error("Error fetching profile", err);
