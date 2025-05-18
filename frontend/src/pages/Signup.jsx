@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/navbar";
+
 import { Link } from "react-router-dom";
 import signup_Img_1 from "../assets/signup-1.jpg";
 import signup_Img_2 from "../assets/signup-2.jpg";
