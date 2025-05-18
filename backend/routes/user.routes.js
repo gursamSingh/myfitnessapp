@@ -7,7 +7,7 @@ const userController = require("../controllers/user.controller");
 const { route } = require("../app");
 const authMiddleware = require("../middlewares/auth.middleware");
 
-// THis route is for registering the user
+// This route is for registering the user
 router.post(
   "/signup",
   [
@@ -55,6 +55,26 @@ router.post(
       .withMessage("Password must be 6 character long"),
   ],
   userController.loginUser
+);
+
+// API route to update the tracker details (water intake, calories and date)
+
+router.post(
+  "/tracker/water",
+  authMiddleware.authUser,
+  userController.updateWaterIntake
+);
+
+router.post(
+  "/tracker/calorie",
+  authMiddleware.authUser,
+  userController.updateCalorieIntake
+);
+
+router.get(
+  "/tracker/water",
+  authMiddleware.authUser,
+  userController.getUserWaterIntake
 );
 
 // API to get the user profile

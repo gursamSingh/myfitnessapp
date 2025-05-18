@@ -14,7 +14,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const submitHandler = async (e) => {
-    console.log("submite handler started");
+    console.log("submit  handler started");
     e.preventDefault();
     const userData = {
       email: email,

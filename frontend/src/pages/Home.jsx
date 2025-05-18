@@ -11,6 +11,7 @@ const Home = () => {
     <div className="w-full h-full">
       <HomeHeader></HomeHeader>
       <WaterCardV1></WaterCardV1>
+      <CaloriesCard></CaloriesCard>
     </div>
   );
 };

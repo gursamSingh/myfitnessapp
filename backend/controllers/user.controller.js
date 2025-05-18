@@ -88,6 +88,56 @@ module.exports.loginUser = async (req, res, next) => {
   res.status(200).json({ token, user });
 };
 
+// Function to update the water tracker
+
+module.exports.updateWaterIntake = async (req, res, next) => {
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
+  try {
+    const { waterIntake } = req.body;
+    const user = await userModel.findById(req.user._id);
+
+    console.log(user);
+
+    user.tracker.waterIntake = waterIntake;
+    user.tracker.updatedAt = new Date();
+
+    await user.save();
+    res
+      .status(200)
+      .json({ message: "Water intake updated", tracker: user.tracker });
+  } catch (err) {
+    res.status(500).json({ error: "Error updating water intake" });
+  }
+};
+
+module.exports.updateCalorieIntake = async (req, res, next) => {
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
+  try {
+    const { calorieIntake } = req.body;
+    const user = await userModel.findById(req.user._id);
+
+    user.tracker.calorieIntake = calorieIntake;
+    user.tracker.updatedAt = new Date();
+
+    await user.save();
+    res
+      .status(200)
+      .json({ message: "Calorie intake updated", tracker: user.tracker });
+  } catch (err) {
+    res.status(500).json({ error: "Error updating calorie intake" });
+  }
+};
+
 // Get the user profile
 module.exports.getUserProfile = async (req, res, next) => {
   res.status(200).json(req.user);
@@ -102,4 +152,8 @@ module.exports.logoutUser = async (req, res, next) => {
   // await blackListTokenModel.create({ token });s
 
   res.status(200).json({ message: "Logged out" });
+};
+
+module.exports.getUserWaterIntake = async (req, res, next) => {
+  res.status(200).json(req.user.tracker.waterIntake);
 };

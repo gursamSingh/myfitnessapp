@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
+// User Schema
 const userSchema = new mongoose.Schema({
   fullname: {
     firstname: {
@@ -64,6 +65,21 @@ const userSchema = new mongoose.Schema({
     goalWeight: {
       type: Number,
       required: true,
+    },
+  },
+
+  tracker: {
+    waterIntake: {
+      type: Number,
+      default: 0,
+    },
+    calorieIntake: {
+      type: Number,
+      default: 0,
+    },
+    updatedAt: {
+      type: Date,
+      default: Date.now,
     },
   },
 });
